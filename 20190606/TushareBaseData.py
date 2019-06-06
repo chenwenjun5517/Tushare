@@ -82,7 +82,7 @@ class TushareBaseData(object):
         '''
         pro = self.pro
         result = pro.stock_basic(exchange='', list_status='L',fields = "ts_code")
-        csvName = "%s-%s.csv" % (time.strftime("%Y-%m-%d-%H-%M"), "nameChange")
+        csvName = "%s-%s.csv" % (time.strftime("%Y-%m-%d-%H-%M"), u"股票曾用名")
         for tsCode in result["ts_code"]:
             nameChange_result = pro.namechange(ts_code=tsCode, fields='ts_code,name,start_date,end_date,change_reason')
             print nameChange_result
